@@ -1,0 +1,82 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Surnames')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-surnames" data-rule="required" class="form-control" name="row[surnames]" type="text" value="{$row.surnames|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Zname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-zname" data-rule="required" class="form-control" name="row[zname]" type="text" value="{$row.zname|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Hname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hname" class="form-control" name="row[hname]" type="text" value="{$row.hname|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sex')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-sex" data-rule="required" class="form-control selectpicker" name="row[sex]">
+                {foreach name="sexList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.sex"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Father_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-father_id" min="0" data-rule="" data-source="people/index" class="form-control selectpage" name="row[father_id]" type="text" value="{$row.father_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Mother_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-mother_id" min="0" data-rule="" data-source="people/index" class="form-control selectpage" name="row[mother_id]" type="text" value="{$row.mother_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Native_city')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class='control-relative'><input id="c-native_city" data-rule="required" class="form-control" data-toggle="city-picker" name="row[native_city]" type="text" value="{$row.native_city|htmlentities}"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Family_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-family_id" data-rule="required" min="0" data-source="family/index" class="form-control selectpage" name="row[family_id]" type="text" value="{$row.family_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Birthday')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-birthday" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[birthday]" type="text" value="{$row.birthday}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Deathday')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-deathday" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[deathday]" type="text" value="{$row.deathday}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

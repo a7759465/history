@@ -1,0 +1,41 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('People_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-people_id" data-rule="required" min="0" data-source="people/index" class="form-control selectpage" name="row[people_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Solar_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-solar_time" data-rule="" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[solar_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Lunar_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-lunar_time" data-rule="" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[lunar_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+
+
+            <input  id="c-switch" name="row[switch]" type="hidden" value="0">
+            <a href="javascript:;" data-toggle="switcher" class="btn-switcher" data-input-id="c-switch" data-yes="1" data-no="0" >
+                <i class="fa fa-toggle-on text-success fa-flip-horizontal text-gray  fa-2x"></i>
+            </a>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-content" data-rule="required" class="form-control editor" rows="5" name="row[content]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
